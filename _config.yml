@@ -103,7 +103,9 @@ theme: cactus
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ""
+  type: git
+  repo: https://github.com/AsZer0s/AsZero.git
+  branch: gh-pages
 
 feed:
   enable: true
