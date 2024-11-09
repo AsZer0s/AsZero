@@ -15,10 +15,10 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  about: /about/index.html
-  articles: /archives/index.html
-  search: /search/index.html
-  friends: /friends/index.html
+  about: /about/
+  articles: /archives/
+  search: /search/
+  friends: /friends/
 
 
 # Links to your social media accounts.
