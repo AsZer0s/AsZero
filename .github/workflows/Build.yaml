@@ -1,4 +1,4 @@
-name: Deploy Hexo to GitHub Pages
+name: Build Hexo
 
 on:
   push:
@@ -6,37 +6,48 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
         with:
-          node-version: '18'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
 
-      - name: Cache node modules
-        uses: actions/cache@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.OS }}-npm-cache
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Configure Git for GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "79568115+AsZer0s@user.noreply.github.com"
+      - name: Build
+        run: npm run build
 
-      - name: Generate static files
-        run: npx hexo generate
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
-        run: npx hexo deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
