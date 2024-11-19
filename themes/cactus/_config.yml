@@ -16,7 +16,6 @@ direction: ltr
 nav:
   home: /
   about: /about/
-  articles: /archives/
   search: /search/
   friends: /friends/
 
