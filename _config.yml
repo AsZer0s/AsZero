@@ -109,10 +109,11 @@ feed:
   type: rss2
   path: rss.xml
   limit: 0
-  hub:
   content: true
   order_by: -date
   icon: /images/logo.png
+  template:
+    - ./custom.xml
 
 sitemap:
   path: 
