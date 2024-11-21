@@ -125,7 +125,7 @@ sitemap:
 lazyload:
   enable: true
   onlypost: false
-  loadingImg: # optional eg ./images/loading.gif
+  loadingImg: https://s1.locimg.com/2024/11/21/17a4f07c69291.gif
   isSPA: false
   preloadRatio: 3
 
