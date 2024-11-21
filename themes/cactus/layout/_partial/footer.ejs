@@ -7,7 +7,7 @@
     <%= config.author || config.title %>
   </div>
   <div><a href="https://icp.gov.moe/?keyword=20241245" target="_blank">萌ICP备20241245号</a></div>
-  <div>我们已稳定运行<span id="runtime"></span></div>
+  
   <div class="footer-right">
     <nav>
       <ul>
@@ -18,19 +18,3 @@
     </nav>
   </div>
 </footer>
-
-<script>
-  const startDate = new Date('2024-10-20T20:00:00');
-  const runtimeElement = document.getElementById('runtime');
-  function updateRunningTime() {
-    const currentDate = new Date();
-    const elapsedTime = currentDate - startDate;
-    const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-    runtimeElement.textContent = `${days}天${hours}时${minutes}分${seconds}秒`;
-  }
-  setInterval(updateRunningTime, 1000);
-  updateRunningTime();
-</script>
