@@ -74,7 +74,7 @@ date: 2024-11-06 16:28:07
 <ul class="link-list">
     <li>
         <a href="https://hiyun.top" target="_blank" class="link-item">
-            <img src="/assets/img/AsZer0s.jpg" alt="AsZer0s">
+            <img src="https://s1.locimg.com/2024/11/21/acc0c1ac47175.jpg" alt="AsZer0s">
             <div class="link-text">
                 <p class="name">&ensp;AsZer0s</p>
                 <p class="description">&ensp;结局是什么，我们自己决定.</p>
@@ -83,7 +83,7 @@ date: 2024-11-06 16:28:07
     </li>
     <li>
         <a href="https://asben.net" target="_blank" class="link-item">
-            <img src="/assets/img/Asben.png" alt="Asben">
+            <img src="https://s1.locimg.com/2024/11/21/5dc72944ad147.png" alt="Asben">
             <div class="link-text">
                 <p class="name">&ensp;Asben</p>
                 <p class="description">&ensp;未来将怎样，全在当下选择.</p>
@@ -92,7 +92,7 @@ date: 2024-11-06 16:28:07
     </li>
     <li>
         <a href="https://circloud.net/" target="_blank" class="link-item">
-            <img src="/assets/img/Crismens.jpg" alt="Crismens">
+            <img src="https://s1.locimg.com/2024/11/21/d32ea479bf71b.jpg" alt="Crismens">
             <div class="link-text">
                 <p class="name">&ensp;Crismens</p>
                 <p class="description">&ensp;时间如流水，抓住才能拥有.</p>
@@ -101,10 +101,19 @@ date: 2024-11-06 16:28:07
     </li>
     <li>
         <a href="https://wancloud.site/" target="_blank" class="link-item">
-            <img src="/assets/img/Ranwan.jpg" alt="Ranwan">
+            <img src="https://s1.locimg.com/2024/11/21/efbe72e891861.jpg" alt="Ranwan">
             <div class="link-text">
                 <p class="name">&ensp;Ranwan</p>
                 <p class="description">&ensp;追求真与理，我们义无反顾.</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://yxgoa.cn/" target="_blank" class="link-item">
+            <img src="https://s1.locimg.com/2024/11/19/74c59665bbdec.png" alt="Ranwan">
+            <div class="link-text">
+                <p class="name">&ensp;云奚小屋</p>
+                <p class="description">&ensp;一间小破屋，但能寻找万物.</p>
             </div>
         </a>
     </li>
