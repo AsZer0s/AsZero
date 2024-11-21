@@ -2,7 +2,7 @@
 title: DNS测试工具-测一下全世界
 abbrlink: 56bd4a4
 date: 2024-11-09 00:00:00
-tags:
+tags: ['开发','软件']
 ---
 
 ## [dnspy](https://github.com/xxnuo/dns-benchmark) - 测试全世界的 DNS 服务器

@@ -1,7 +1,7 @@
 ---
 title: ArchLinux基础安装
 date: 2024-11-19 20:39:23
-tags:
+tags: ['Linux','杂谈','开发','网络']
 ---
 
 本篇参考 [Arch Linux 官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)

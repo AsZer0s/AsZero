@@ -1,7 +1,6 @@
 ---
 title: MSF使用教程
-tags: Tools
-abbrlink: 2f26ee9c
+tags: ['安全'，'Linux']
 date: 2024-10-24 21:00:00
 ---
 
