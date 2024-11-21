@@ -98,3 +98,18 @@
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 	<% } %>
 </head>
+
+<script>
+  const originalTitle = document.title;
+  const leavingTitle = "离开页面啦！";
+  document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+          document.title = leavingTitle;
+      } else {
+          document.title = originalTitle;
+      }
+  });
+  window.addEventListener("beforeunload", function() {
+      document.title = leavingTitle;
+  });
+</script>
