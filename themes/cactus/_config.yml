@@ -15,6 +15,7 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
+  tag: /tags/
   about: /about/
   search: /search/
   friends: /friends/
