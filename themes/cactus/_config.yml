@@ -99,7 +99,7 @@ logo:
   enabled: true
   width: 50
   height: 50
-  url: https://dimg04.tripcdn.com/images/0Z059224x8xn41id77BC7.jpg
+  url: https://dimg04.tripcdn.com/images/0Z00m224x8xn2j0qq5D28.jpg
   gravatar: false
   grayout: true
 
@@ -114,10 +114,10 @@ logo:
 #   - gravatar: whether to create a favicon from your Gravatar
 favicon:
   desktop:
-    url: https://dimg04.tripcdn.com/images/0Z059224x8xn41id77BC7.jpg
+    url: https://dimg04.tripcdn.com/images/0Z00m224x8xn2j0qq5D28.jpg
     gravatar: false
   android:
-    url: https://dimg04.tripcdn.com/images/0Z02s224x8xn2j0qs9C15.jpg
+    url: https://dimg04.tripcdn.com/images/0Z00m224x8xn2j0qq5D28.jpg
     gravatar: false
   apple:
     url: https://dimg04.tripcdn.com/images/0Z00m224x8xn2j0qq5D28.jpg
