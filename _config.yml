@@ -111,7 +111,7 @@ feed:
   limit: 0
   content: true
   order_by: -date
-  icon: /images/logo.png
+  icon: https://dimg04.tripcdn.com/images/0Z059224x8xn41id77BC7.jpg
   template:
     - ./custom.xml
 

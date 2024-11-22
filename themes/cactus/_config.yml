@@ -114,13 +114,13 @@ logo:
 #   - gravatar: whether to create a favicon from your Gravatar
 favicon:
   desktop:
-    url: /images/favicon.ico
+    url: https://dimg04.tripcdn.com/images/0Z059224x8xn41id77BC7.jpg
     gravatar: false
   android:
-    url: /images/favicon-192x192.png
+    url: https://dimg04.tripcdn.com/images/0Z02s224x8xn2j0qs9C15.jpg
     gravatar: false
   apple:
-    url: /images/apple-touch-icon.png
+    url: https://dimg04.tripcdn.com/images/0Z00m224x8xn2j0qq5D28.jpg
     gravatar: false
 
 # The color scheme that should be used to highlight codeblocks.
