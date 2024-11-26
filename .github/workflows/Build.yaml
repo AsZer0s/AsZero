@@ -33,11 +33,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Check for modified files
+        id: check_changes
+        run: |
+          git diff --exit-code --quiet || echo "Changes detected"
+      
+      - name: Deploy to GitHub Pages (if changes detected)
+        if: steps.check_changes.outputs.stdout == 'Changes detected'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          keep_files: false
+          keep_files: true
           force_orphan: true
