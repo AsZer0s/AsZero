@@ -34,10 +34,10 @@ $$
 ### 公钥与私钥的产生
 假设Alice想要通过不可靠的媒体接收Bob的私人消息。她可以用以下的方式来产生一个公钥和一个私钥：
 
-随意选择两个大的素数$\displaystyle p$和$\displaystyle q$，$\displaystyle p$不等于$\displaystyle q$，计算$\displaystyle N=pq$。
-根据欧拉函数，求得$\displaystyle r=\varphi (N)=\varphi (p)\times \varphi (q)=(p-1)(q-1)$。
-选择一个小于$\displaystyle r$的整数$\displaystyle e$，使$\displaystyle e$与$\displaystyle r$互质。并求得$\displaystyle e$关于$\displaystyle r$的模逆元，命名为$\displaystyle d$（求$\displaystyle d$令$\displaystyle ed\equiv 1{\pmod {r}}$）。（模逆元存在，当且仅当$\displaystyle e$与$\displaystyle r$互质。）
-将$\displaystyle p$和$\displaystyle q$的记录销毁
+1. 随意选择两个大的素数$\displaystyle p$和$\displaystyle q$，$\displaystyle p$不等于$\displaystyle q$，计算$\displaystyle N=pq$。
+2. 根据欧拉函数，求得$\displaystyle r=\varphi (N)=\varphi (p)\times \varphi (q)=(p-1)(q-1)$。
+3. 选择一个小于$\displaystyle r$的整数$\displaystyle e$，使$\displaystyle e$与$\displaystyle r$互质。并求得$\displaystyle e$关于$\displaystyle r$的模逆元，命名为$\displaystyle d$（求$\displaystyle d$令$\displaystyle ed\equiv 1{\pmod {r}}$）。（模逆元存在，当且仅当$\displaystyle e$与$\displaystyle r$互质。）
+4. 将$\displaystyle p$和$\displaystyle q$的记录销毁
 
 其中，$\displaystyle (N,e)$是公钥，$\displaystyle (N,d)$是私钥。Alice将她的公钥$\displaystyle (N,e)$传给Bob，而将她的私钥$\displaystyle (N,d)$藏起来
 
