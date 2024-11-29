@@ -4,6 +4,8 @@ date: 2024-11-29 21:54:39
 tags: ['开发','Linux','前端','网络']
 ---
 
+![htaccess](https://dimg04.tripcdn.com/images/0Z013224x8xro6e4w4B66.jpg)
+
 ## htaccess文件简介
 htaccess文件是Apache服务器中的一个配置文件，负责相关目录下的网页配置
 /www/html下的.htaccess文件与主配置文件中段中内容完全等效
