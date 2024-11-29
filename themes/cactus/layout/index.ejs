@@ -1,4 +1,5 @@
 <section id="about" class="p-note"> 
+  <span id="loadTime"></span> 
   <div>我们已稳定运行<span id="runtime"></span></div> 
   <% if (config.description) { %>
     <%- markdown(config.description) %>
@@ -88,4 +89,18 @@
   }
   setInterval(updateRunningTime, 1000);
   updateRunningTime();
+</script>
+
+<script>
+window.addEventListener('load', function () {
+  var startTime = performance.timing.navigationStart;
+  var endTime = performance.timing.domContentLoadedEventEnd;
+  var loadTime = (endTime - startTime) / 1000;
+  var loadTimeElement = document.createElement('span');
+  loadTimeElement.style.color = 'red';
+  loadTimeElement.textContent = loadTime.toFixed(1);
+  document.getElementById('loadTime').textContent = '本次加载速度：';
+  document.getElementById('loadTime').appendChild(loadTimeElement);
+  document.getElementById('loadTime').textContent += '秒';
+});
 </script>
