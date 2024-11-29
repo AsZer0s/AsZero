@@ -31,9 +31,9 @@ RewriteCond指令定义了一个规则的条件，即，在一个RewriteRule指�
 条件之后的重写规则仅在当前URI与pattern匹配并且符合这些条件的时候才会起作用
 TestString是一个纯文本的字符串
 但是还可以包含下列可扩展的成分:
-\+ RewriteRule反向引用: 引用方法是 $N (0 <= N <= 9) 引用当前(带有若干RewriteCond指令的)RewriteRule中的与pattern匹配的分组成分(圆括号!)
-\+ RewriteCond反向引用: 引用方法是 %N (1 <= N <= 9) 引用当前若干RewriteCond条件中最后符合的条件中的分组成分(圆括号!)
-\+ RewriteMap 扩展: 引用方法是 ${mapname:key|default} + 服务器变量: 引用方法是 %{ NAME_OF_VARIABLE } CondPattern是条件参数
++RewriteRule反向引用: 引用方法是 $N (0 <= N <= 9) 引用当前(带有若干RewriteCond指令的)RewriteRule中的与pattern匹配的分组成分(圆括号!)
++RewriteCond反向引用: 引用方法是 %N (1 <= N <= 9) 引用当前若干RewriteCond条件中最后符合的条件中的分组成分(圆括号!)
++RewriteMap 扩展: 引用方法是 ${mapname:key|default} + 服务器变量: 引用方法是 %{ NAME_OF_VARIABLE } CondPattern是条件参数
 Flags标识是是第三个参数,可选OR、AND、NC，默认为AND
 
 ### RewriteRule Pattern Substitution [Flags]
