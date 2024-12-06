@@ -3840,6 +3840,19 @@
       H = (r("fd71"), r("a447")),
       G = r.n(H),
       z = (r("e260"), r("e6cf"), r("cca6"), r("a79d"), r("2b0e")),
+      Q = function () {
+        var e = this,
+          t = e.$createElement,
+          r = e._self._c || t;
+        return r(
+          "el-container",
+          { attrs: { id: "app" } },
+          [
+            r("el-main", [r("Home")], 1)
+          ],
+          1
+        );
+      },
       V = [],
       K = r("1da1"),
       X = (r("96cf"), r("99af"), r("ab8f")),
