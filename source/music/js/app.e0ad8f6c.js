@@ -3978,13 +3978,6 @@
               ],
               1
             ),
-            r("audio", {
-              attrs: {
-                autoplay: e.playing_auto,
-                src: e.playing_url,
-                controls: "",
-              },
-            }),
             r("PreviewTable", {
               staticClass: "table-content",
               attrs: { policy: e.filename_policy, "table-data": e.tableData },
