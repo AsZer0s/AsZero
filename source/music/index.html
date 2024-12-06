@@ -2,610 +2,113 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AsZer0s Music</title>
+    <meta charset="utf-8">
+    <meta content="webkit" name="renderer">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Zer0Teams MusicUnlock</title>
+    <meta content="音乐,解锁,ncm,qmc,mgg,mflac,qq音乐,网易云音乐,加密" name="keywords">
+    <meta content="音乐解锁 - 在任何设备上解锁已购的加密音乐！" name="description">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1010;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #1db1ff;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
         }
 
-        .container {
-            width: 100%;
-            box-sizing: border-box;
-            padding-bottom: 120px;
+        @keyframes spin {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            z-index: 1;
-            background-color: #f4f4f4;
-            height: 80px;
-            width: 100%;
-            top: 0;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-bar input,
-        .search-bar select {
-            padding: 10px;
-            margin-right: 6px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .search-bar button {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .settings {
-            position: relative;
-        }
-
-        .settings button {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .settings button:hover {
-            background-color: #5a6268;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
+        #loader-mask {
+            text-align: center;
+            position: absolute;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .modal-content h2 {
-            margin-top: 0;
-        }
-
-        .modal-content button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .modal-content button.primary {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .modal-content button.secondary {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .song-list {
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(auto-fill, 430px);
-            grid-gap: 10px;
-        }
-
-        .song-item {
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            width: 400px;
-
-        }
-
-        .song-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-        .song-item .info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .song-item .actions {
-            display: flex;
-            gap: 18px;
-            flex-direction: column;
-        }
-
-        .song-item button {
-            padding: 5px;
-            background-color: #5a6268;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .song-item .actions button:first-of-type {
-            background-color: #007bff;
-        }
-
-        .song-item .actions button:last-of-type {
-            background-color: #28a745;
-        }
-
-        .player {
-            position: fixed;
             bottom: 0;
             left: 0;
-            width: 100%;
-            background-color: white;
-            border-top: 1px solid #ccc;
-            padding: 10px 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            box-sizing: border-box;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            right: 0;
+            top: 0;
+            z-index: 1009;
+            background-color: rgba(242, 246, 252, 0.88);
         }
 
-        .player audio {
-            width: 100%;
-        }
-
-        .player .song-info {
-            flex: 1;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #333;
-            text-align: center;
-        }
-
-        @media (max-width: 900px) {
-            .song-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
+        @media (prefers-color-scheme: dark) {
+            #loader-mask {
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.85);
             }
 
-            .song-item {
-                width: 100%;
+            #loader-mask a {
+                color: #ddd;
             }
+
+            #loader-mask a:hover {
+                color: #1db1ff;
+            }
+        }
+
+        #loader-source {
+            font-size: 1.5rem;
+        }
+
+        #loader-tips-timeout {
+            font-size: 1.2rem;
         }
     </style>
+    <link href="css/app.5388e39c.css" rel="preload" as="style">
+    <link href="css/chunk-vendors.094863c6.css" rel="preload" as="style">
+    <link href="js/app.e0ad8f6c-1.js" rel="preload" as="script">
+    <link href="js/chunk-vendors.0c483a87.js" rel="preload" as="script">
+    <link href="css/chunk-vendors.094863c6.css" rel="stylesheet">
+    <link href="css/app.5388e39c.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+    <link rel="manifest" href="web-manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="音乐解锁">
+    <link rel="apple-touch-icon" href="./img/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="./img/icons/safari-pinned-tab.svg" color="#4DBA87">
+    <meta name="msapplication-TileImage" content="./img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
 </head>
 
 <body>
-    <div class="header">
-        <div class="search-bar">
-            <select id="search-type">
-                <option value="keyword">关键词</option>
-                <option value="mid">MID</option>
-            </select>
-            <input type="text" id="search-input" placeholder="输入关键词或MID" onkeypress="handleKeyPress(event)">
-            <button onclick="searchSongs()">搜索</button>
+    <div id="loader-mask">
+        <div id="loader"></div><noscript>
+            <h3 id="loader-js">请启用JavaScript</h3>
+        </noscript>
+        <h3 id="loader-source">请勿直接运行源代码！</h3>
+        <div id="loader-tips-outdated" hidden>
+            <h2>您可能在使用不受支持的<span style="color: #f00">过时</span>浏览器，这可能导致此应用无法正常工作。</h2>
+            <h3>如果您使用双核浏览器，您可以尝试切换到 <span style="color: #f00">“极速模式”</span> 解决此问题。</h3>
+            <h3>或者，您可以尝试更换下方的几个浏览器之一。</h3>
         </div>
-        <div class="settings">
-            <button onclick="openSettingsModal()">设置</button>
-        </div>
+        <h3 id="loader-tips-timeout" hidden>音乐解锁采用了一些新特性！建议使用 <a href="https://www.microsoft.com/zh-cn/edge"
+                target="_blank">Microsoft Edge Chromium</a> <a href="https://www.google.cn/chrome/"
+                target="_blank">Google Chrome</a> <a href="https://www.firefox.com.cn/" target="_blank">Mozilla
+                Firefox</a> | <a href="https://zerospace.dev" target="_blank">Zer0Teams</a></h3>
     </div>
-    <div class="container">
-        <div class="song-list" id="song-list"></div>
-        <div class="player" id="player">
-            <div class="song-info" id="song-info">暂无播放内容</div>
-            <audio id="audio-player" controls></audio>
-        </div>
-    </div>
-
-    <div id="settings-modal" class="modal">
-        <div class="modal-content">
-            <h2>设置</h2>
-            <label>
-                在线播放默认音质:
-                <select id="default-play-quality">
-                    <option value="14">母带 (q=14)</option>
-                    <option value="11">无损 (q=11)</option>
-                    <option value="8">高 (q=8)</option>
-                    <option value="4" selected>标准 (q=4)</option>
-                    <option value="2">低 (q=2)</option>
-                </select>
-            </label>
-            <label>
-                下载默认音质:
-                <select id="default-download-quality">
-                    <option value="14">母带 (q=14)</option>
-                    <option value="11">无损 (q=11)</option>
-                    <option value="8">高 (q=8)</option>
-                    <option value="4" selected>标准 (q=4)</option>
-                    <option value="2">低 (q=2)</option>
-                </select>
-            </label>
-            <div>
-                <button class="primary" onclick="saveSettings()">确定</button>
-                <button class="secondary" onclick="closeSettingsModal()">取消</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="download-modal" class="modal">
-        <div class="modal-content">
-            <h2>选择下载音质</h2>
-            <label>
-                <input type="radio" name="download-quality" value="14">
-                母带 (q=14)
-            </label>
-            <label>
-                <input type="radio" name="download-quality" value="11">
-                无损 (q=11)
-            </label>
-            <label>
-                <input type="radio" name="download-quality" value="8">
-                高 (q=8)
-            </label>
-            <label>
-                <input type="radio" name="download-quality" value="4">
-                标准 (q=4)
-            </label>
-            <label>
-                <input type="radio" name="download-quality" value="2">
-                低 (q=2)
-            </label>
-            <label>
-                自定义音质级别:
-                <input type="number" id="custom-quality" min="1" max="14">
-            </label>
-            <div>
-                <button class="primary" onclick="downloadSelectedQuality()">下载</button>
-                <button class="secondary" onclick="closeDownloadModal()">取消</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="empty-url-modal" class="modal">
-        <div class="modal-content">
-            <h2>URL 为空</h2>
-            <p>无法播放或下载，歌曲 URL 为空。可以尝试刷新页面后重试</p>
-            <div>
-                <button class="secondary" onclick="closeEmptyUrlModal()">取消</button>
-                <button class="primary" onclick="refreshPage()">刷新页面</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let currentSong = null;
-        let selectedQuality = null;
-        let selectedMID = null;
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                searchSongs();
-            }
-        }
-
-        function openSettingsModal() {
-            document.getElementById('settings-modal').style.display = 'block';
-        }
-
-        function closeSettingsModal() {
-            document.getElementById('settings-modal').style.display = 'none';
-        }
-
-        function saveSettings() {
-            const defaultPlayQuality = document.getElementById('default-play-quality').value;
-            const defaultDownloadQuality = document.getElementById('default-download-quality').value;
-
-            localStorage.setItem('defaultPlayQuality', defaultPlayQuality);
-            localStorage.setItem('defaultDownloadQuality', defaultDownloadQuality);
-
-            closeSettingsModal();
-        }
-
-        function loadSettings() {
-            const defaultPlayQuality = localStorage.getItem('defaultPlayQuality') || '4';
-            const defaultDownloadQuality = localStorage.getItem('defaultDownloadQuality') || '4';
-
-            document.getElementById('default-play-quality').value = defaultPlayQuality;
-            document.getElementById('default-download-quality').value = defaultDownloadQuality;
-        }
-
-        function openDownloadModal(mid) {
-            selectedMID = mid;
-            document.getElementById('custom-quality').value = ''
-            document.getElementById('download-modal').style.display = 'block';
-
-            // 默认选中设置的默认下载音质
-            const defaultDownloadQuality = document.getElementById('default-download-quality').value;
-            const qualityRadios = document.querySelectorAll('input[name="download-quality"]');
-            qualityRadios.forEach(radio => {
-                if (radio.value === defaultDownloadQuality) {
-                    radio.checked = true;
-                }
-            });
-
-            // 绑定事件监听器
-            qualityRadios.forEach(radio => {
-                radio.addEventListener('change', () => {
-                    if (radio.checked) {
-                        document.getElementById('custom-quality').value = '';
-                    }
-                });
-            });
-
-            document.getElementById('custom-quality').addEventListener('input', () => {
-                qualityRadios.forEach(radio => {
-                    radio.checked = false;
-                });
-            });
-        }
-
-        function closeDownloadModal() {
-            document.getElementById('download-modal').style.display = 'none';
-        }
-
-        function downloadSelectedQuality() {
-            const qualityRadios = document.querySelectorAll('input[name="download-quality"]');
-            let quality = null;
-            for (const radio of qualityRadios) {
-                if (radio.checked) {
-                    quality = radio.value;
-                    break;
-                }
-            }
-            const customQuality = document.getElementById('custom-quality').value;
-            if (customQuality && customQuality >= 1 && customQuality <= 14) {
-                quality = customQuality;
-            }
-            if (quality) {
-                downloadSong(selectedMID, quality);
-            } else {
-                alert('请选择或输入有效的音质级别');
-            }
-            closeDownloadModal();
-        }
-
-        function searchSongs() {
-            const searchType = document.getElementById('search-type').value;
-            const keyword = document.getElementById('search-input').value;
-            let url;
-
-            if (!keyword) return
-
-            if (searchType === 'keyword') {
-                url = `https://api.lolimi.cn/API/qqdg/?word=${encodeURIComponent(keyword)}`;
-            } else if (searchType === 'mid') {
-                url = `https://api.lolimi.cn/API/qqdg/?mid=${encodeURIComponent(keyword)}&p=4`;
-            }
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.code === 200) {
-                        displaySongs(data.data, keyword);
-                    } else {
-                        alert('搜索失败，请重试。');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('搜索失败，请重试。');
-                });
-        }
-
-        function displaySongs(songs, keyword) {
-            const songList = document.getElementById('song-list');
-            songList.innerHTML = '';
-
-            if (Array.isArray(songs)) {
-                songs.forEach(song => {
-                    const songItem = document.createElement('div');
-                    songItem.className = 'song-item';
-                    songItem.innerHTML = `
-                    <img src="${song.cover}" alt="${song.song}">
-                    <div class="info">
-                        <div>${song.song} - ${song.singer}</div>
-                        <div>专辑: ${song.album}</div>
-                        <div>MID: ${song.mid} <button onclick="copyMID('${song.mid}', this)">复制</button></div>
-                    </div>
-                    <div class="actions">
-                        <button onclick="playSong('${song.mid}')">播放</button>
-                        <button onclick="openDownloadModal('${song.mid}')">下载</button>
-                    </div>
-                `;
-                    songList.appendChild(songItem);
-                });
-            } else if (typeof songs === 'object' && songs !== null) {
-                const song = songs;
-                const songItem = document.createElement('div');
-                songItem.className = 'song-item';
-                songItem.innerHTML = `
-                <img src="${song.cover}" alt="${song.song}">
-                <div class="info">
-                    <div>${song.song} - ${song.singer}</div>
-                    <div>专辑: ${song.album}</div>
-                    <div>MID: ${keyword} <button onclick="copyMID('${keyword}', this)">复制</button></div>
-                </div>
-                <div class="actions">
-                    <button onclick="playSong('${keyword}')">播放</button>
-                    <button onclick="openDownloadModal('${keyword}')">下载</button>
-                </div>
-            `;
-                songList.appendChild(songItem);
-            } else {
-                alert('搜索结果无效，请重试。');
-            }
-        }
-
-        function playSong(mid) {
-            const defaultPlayQuality = document.getElementById('default-play-quality').value;
-            let quality = parseInt(defaultPlayQuality);
-
-            const url = `https://api.lolimi.cn/API/qqdg/?mid=${mid}&q=${quality}`;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.code === 200) {
-                        if (data.data.url) {
-                            const audioPlayer = document.getElementById('audio-player');
-                            audioPlayer.pause();
-                            audioPlayer.src = data.data.url;
-                            audioPlayer.load();
-                            setTimeout(() => {
-                                audioPlayer.play().catch(error => {
-                                    console.error('播放失败:', error);
-                                    alert('播放失败，请重试。');
-                                });
-                            }, 500);
-                            currentSong = data.data;
-                            updatePlayerInfo();
-                        } else {
-                            showEmptyUrlModal();
-                        }
-                    } else {
-                        throw (`code:${data.code}`)
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert(`播放失败，请重试。(${error})`);
-                });
-        }
-
-        function downloadSong(mid, quality) {
-            const url = `https://api.lolimi.cn/API/qqdg/?mid=${mid}&q=${quality}`;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.code === 200) {
-                        if (data.data.url) {
-                            const secureUrl = data.data.url.replace(/^http:\/\//i, 'https://');
-                            const fileName = `${data.data.singer} - ${data.data.song}.${secureUrl.split('.').pop().split('?')[0]}`;
-
-                            getOSSBlobResource(secureUrl).then(res => {
-                                saveFile(res, fileName);
-                            });
-                        } else {
-                            showEmptyUrlModal();
-                        }
-                    } else {
-                        throw (`code:${data.code}`)
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert(`下载失败，请重试。(${error})`);
-                });
-        }
-
-        function getOSSBlobResource(url) {
-            return fetch(url, {
-                method: 'GET',
-                mode: 'cors',
-                cache: 'no-cache'
-            }).then(response => {
-                if (response.ok) {
-                    return response.blob();
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            });
-        }
-
-        function saveFile(data, fileName) {
-            const exportBlob = new Blob([data]);
-            const saveLink = document.createElement('a');
-            document.body.appendChild(saveLink);
-            saveLink.style.display = 'none';
-            const urlObject = window.URL.createObjectURL(exportBlob);
-            saveLink.href = urlObject;
-            saveLink.download = fileName;
-            saveLink.click();
-            document.body.removeChild(saveLink);
-        }
-
-        function updatePlayerInfo() {
-            const player = document.getElementById('player');
-            const songInfo = document.getElementById('song-info');
-            if (currentSong) {
-                player.querySelector('audio').src = currentSong.url;
-                songInfo.innerText = `${currentSong.song} - ${currentSong.singer}`;
-            } else {
-                player.querySelector('audio').src = '';
-                songInfo.innerText = '';
-            }
-        }
-
-        function copyMID(mid, button) {
-            navigator.clipboard.writeText(mid).then(() => {
-                button.innerText = '已复制';
-                button.disabled = true;
-                setTimeout(() => {
-                    button.innerText = '复制';
-                    button.disabled = false;
-                }, 1000);
-            }).catch(err => {
-                console.error('无法复制MID:', err);
-                alert('无法复制MID，请手动复制。');
-            });
-        }
-
-        function showEmptyUrlModal() {
-            document.getElementById('empty-url-modal').style.display = 'block';
-        }
-
-        function closeEmptyUrlModal() {
-            document.getElementById('empty-url-modal').style.display = 'none';
-        }
-
-        function refreshPage() {
-            location.reload();
-        }
-
-        window.onload = loadSettings;
-    </script>
+    <div id="app"></div>
+    <script src="./loader.js"></script>
+    <script src="js/chunk-vendors.0c483a87.js"></script>
+    <script src="js/app.e0ad8f6c-1.js"></script>
 </body>
 
 </html>
