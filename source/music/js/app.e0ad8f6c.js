@@ -3849,13 +3849,7 @@
           { attrs: { id: "app" } },
           [
             r("el-main", [r("Home")], 1),
-            r("el-footer", { attrs: { id: "app-footer" } }, [
-              r("div", [
-                e._v(
-                  " 目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm) "
-                )
-              ]),
-            ]),
+            r("el-footer", { attrs: { id: "app-footer" } }),
           ],
           1
         );
