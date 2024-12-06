@@ -1,7 +1,7 @@
 ---
 title: JavaScript飞雪特效
 date: 2024-12-03 17:36:19
-tags:
+tags: ['前端','JavaScript']
 ---
 马上就要到了传统节日“春节”?
 网站添加了飞雪❄️特效
