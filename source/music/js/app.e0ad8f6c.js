@@ -3864,15 +3864,6 @@
                   " 目前支持 网易云音乐(ncm), QQ音乐(qmc, mflac, mgg), 酷狗音乐(kgm), 虾米音乐(xm), 酷我音乐(.kwm) "
                 )
               ]),
-              r("div", [
-                r("span", [
-                  e._v(
-                    "Copyright © 2019 - " +
-                      e._s(new Date().getFullYear()) +
-                      " Zer0Teams"
-                  ),
-                ])
-              ]),
             ]),
           ],
           1
