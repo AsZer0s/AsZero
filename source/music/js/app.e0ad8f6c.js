@@ -3017,28 +3017,6 @@
                 r(
                   "div",
                   [
-                    e._v(" 仅在浏览器内对文件进行解锁，无需消耗流量 "),
-                    r(
-                      "el-tooltip",
-                      { attrs: { effect: "dark", placement: "top-start" } },
-                      [
-                        r(
-                          "div",
-                          { attrs: { slot: "content" }, slot: "content" },
-                          [e._v("算法在源代码中已经提供，所有运算都发生在本地")]
-                        ),
-                        r("i", {
-                          staticClass: "el-icon-info",
-                          staticStyle: { "font-size": "12px" },
-                        }),
-                      ]
-                    ),
-                  ],
-                  1
-                ),
-                r(
-                  "div",
-                  [
                     e._v(
                       " 工作模式: " +
                         e._s(e.parallel ? "多线程 Worker" : "单线程 Queue") +
