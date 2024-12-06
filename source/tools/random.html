@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        .result {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-family: monospace;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color:#515958;
+            border-radius:28px;
+            border:1px solid #303b31;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:15px 20px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #0b2606;
+        }
+        button:hover {
+            background-color:#686e65;
+        }
+        button:active {
+            position:relative;
+            top:1px;
+        }
+
+        .css-input {
+            font-size: 15px;
+            border-width: 1px;
+            border-color: #424141;
+            background-color: #383434;
+            color: #ffffff;
+            border-style: solid;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+            text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        }
+        .css-input:focus {
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>随机数生成器</h1>
+
+    <label for="min">最小值：</label>
+    <input type="number" id="min" class="css-input" value="1">
+
+    <label for="max">最大值：</label>
+    <input type="number" id="max" class="css-input" value="100">
+
+    <label for="quantity">生成数量：</label>
+    <input type="number" id="quantity" class="css-input" value="5">
+
+    <button onclick="generateRandomNumbers()">开始生成随机数</button>
+
+    <div class="result">
+        <h3>生成结果：</h3>
+        <textarea id="result-output" class="css-input" readonly></textarea>
+    </div>
+
+    <script>
+        function generateRandomNumbers() {
+            const min = parseInt(document.getElementById('min').value);
+            const max = parseInt(document.getElementById('max').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            if (isNaN(min) || isNaN(max) || isNaN(quantity) || quantity <= 0 || min >= max) {
+                alert("请输入有效的数字");
+                return;
+            }
+
+            if (quantity > (max - min + 1)) {
+                alert("生成的数量不能大于范围内的数字个数");
+                return;
+            }
+
+            let randomNumbers = new Set();
+
+            while (randomNumbers.size < quantity) {
+                const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+                randomNumbers.add(randomNum);
+            }
+            document.getElementById('result-output').value = Array.from(randomNumbers).join(', ');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Base64</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-family: monospace;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color:#515958;
+            border-radius:28px;
+            border:1px solid #303b31;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:15px 20px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #0b2606;
+        }
+        button:hover {
+            background-color:#686e65;
+        }
+        button:active {
+            position:relative;
+            top:1px;
+        }
+
+        .css-input {
+            padding: 20px;
+            font-size: 15px;
+            border-width: 1px;
+            border-color: #424141;
+            background-color: #383434;
+            color: #ffffff;
+            border-style: solid;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+            text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+        }
+        .css-input:focus {
+            outline:none;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Base64 加解密工具</h1>
+
+    <label for="text-input">请输入要加密或解密的内容：</label>
+    <textarea id="text-input" class="css-input"></textarea>
+
+    <button onclick="encodeBase64()">加密 (编码为Base64)</button>
+    <button onclick="decodeBase64()">解密 (从Base64解码)</button>
+
+    <div class="result">
+        <label for="text-input">结果：</label>
+        <textarea id="result-output" class="css-input" readonly></textarea>
+        <button onclick="copyToClipboard()">复制结果</button>
+    </div>
+
+    <script>
+        function encodeBase64() {
+            const inputText = document.getElementById('text-input').value;
+            const encodedText = btoa(unescape(encodeURIComponent(inputText)));
+            document.getElementById('result-output').value = encodedText;
+        }
+
+        function decodeBase64() {
+            const inputText = document.getElementById('text-input').value;
+            try {
+                const decodedText = decodeURIComponent(escape(atob(inputText)));
+                document.getElementById('result-output').value = decodedText;
+            } catch (e) {
+                alert("无效的Base64编码！");
+            }
+        }
+
+        function copyToClipboard() {
+            const resultText = document.getElementById('result-output');
+            resultText.select();
+            resultText.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            alert("结果已复制到剪贴板！");
+        }
+    </script>
+</body>
+</html>
