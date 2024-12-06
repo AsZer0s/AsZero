@@ -4045,7 +4045,7 @@
                                   '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
                                 dangerouslyUseHTMLString: !0,
                                 duration: 1e4,
-                                position: "top-left",
+                                position: "center",
                               })
                             : e.$notify.info({
                                 title: "Zer0Teams",
@@ -4053,7 +4053,7 @@
                                   '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
                                 dangerouslyUseHTMLString: !0,
                                 duration: 1e4,
-                                position: "top-center",
+                                position: "center",
                               });
                         case 12:
                         case "end":
