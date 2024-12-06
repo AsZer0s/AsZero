@@ -4015,50 +4015,9 @@
             var e = this;
             return Object(K["a"])(
               regeneratorRuntime.mark(function t() {
-                var r, n;
                 return regeneratorRuntime.wrap(
                   function (t) {
-                    while (1)
-                      switch ((t.prev = t.next)) {
-                        case 0:
-                          return (
-                            (r = document.getElementById("loader-mask")),
-                            r && r.remove(),
-                            (t.prev = 2),
-                            (t.next = 5),
-                            Object(oe["a"])(e.version)
-                          );
-                        case 5:
-                          (n = t.sent), (t.next = 11);
-                          break;
-                        case 8:
-                          (t.prev = 8),
-                            (t.t0 = t["catch"](2)),
-                            console.warn("check version info failed", t.t0);
-                        case 11:
-                          n &&
-                          (n.HttpsFound ||
-                            (n.Found && "https:" !== window.location.protocol))
-                            ? e.$notify.info({
-                                title: "Zer0Teams",
-                                message: 
-                                  '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
-                                dangerouslyUseHTMLString: !0,
-                                duration: 1e4,
-                                position: "top-left",
-                              })
-                            : e.$notify.info({
-                                title: "Zer0Teams",
-                                message:
-                                  '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
-                                dangerouslyUseHTMLString: !0,
-                                duration: 1e4,
-                                position: "top-left",
-                              });
-                        case 12:
-                        case "end":
-                          return t.stop();
-                      }
+                    return t.stop();
                   },
                   t,
                   null,
