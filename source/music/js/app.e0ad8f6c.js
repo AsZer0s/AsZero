@@ -3013,40 +3013,6 @@
                 attrs: { slot: "tip" },
                 slot: "tip",
               },
-              [
-                r(
-                  "div",
-                  [
-                    e._v(
-                      " 工作模式: " +
-                        e._s(e.parallel ? "多线程 Worker" : "单线程 Queue") +
-                        " "
-                    ),
-                    r(
-                      "el-tooltip",
-                      { attrs: { effect: "dark", placement: "top-start" } },
-                      [
-                        r(
-                          "div",
-                          { attrs: { slot: "content" }, slot: "content" },
-                          [
-                            e._v(
-                              " 将此工具部署在HTTPS环境下，可以启用Web Worker特性，"
-                            ),
-                            r("br"),
-                            e._v(" 从而更快的利用并行处理完成解锁 "),
-                          ]
-                        ),
-                        r("i", {
-                          staticClass: "el-icon-info",
-                          staticStyle: { "font-size": "12px" },
-                        }),
-                      ]
-                    ),
-                  ],
-                  1
-                ),
-              ]
             ),
             r(
               "transition",
