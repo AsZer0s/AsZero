@@ -4012,64 +4012,7 @@
         },
         methods: {
           finishLoad: function () {
-            var e = this;
             return Object(K["a"])(
-              regeneratorRuntime.mark(function t() {
-                var r, n;
-                return regeneratorRuntime.wrap(
-                  function (t) {
-                    while (1)
-                      switch ((t.prev = t.next)) {
-                        case 0:
-                          return (
-                            (r = document.getElementById("loader-mask")),
-                            r && r.remove(),
-                            (t.prev = 2),
-                            (t.next = 5),
-                            Object(oe["a"])(e.version)
-                          );
-                        case 5:
-                          (n = t.sent), (t.next = 11);
-                          break;
-                        case 8:
-                          (t.prev = 8),
-                            (t.t0 = t["catch"](2)),
-                            console.warn("check version info failed", t.t0);
-                        case 11:
-                          n &&
-                          (n.HttpsFound ||
-                            (n.Found && "https:" !== window.location.protocol))
-                            ? e.$notify.warning({
-                                title: "发现更新",
-                                message: "发现新版本 v"
-                                  .concat(n.Version, "<br/>更新详情：")
-                                  .concat(
-                                    n.Detail,
-                                    '<br/> <a target="_blank" href="'
-                                  )
-                                  .concat(n.URL, '">获取更新</a>'),
-                                dangerouslyUseHTMLString: !0,
-                                duration: 15e3,
-                                position: "top-left",
-                              })
-                            : e.$notify.info({
-                                title: "离线使用",
-                                message:
-                                  '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
-                                dangerouslyUseHTMLString: !0,
-                                duration: 1e4,
-                                position: "top-left",
-                              });
-                        case 12:
-                        case "end":
-                          return t.stop();
-                      }
-                  },
-                  t,
-                  null,
-                  [[2, 8]]
-                );
-              })
             )();
           },
         },
