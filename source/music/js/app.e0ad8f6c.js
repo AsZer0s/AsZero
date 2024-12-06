@@ -4124,10 +4124,7 @@
                             : e.$notify.info({
                                 title: "离线使用",
                                 message:
-                                  '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>'.concat(
-                                    Z.updateInfo,
-                                    ' </div>\n                        </div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a>\n                    </div>'
-                                  ),
+                                  '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
                                 dangerouslyUseHTMLString: !0,
                                 duration: 1e4,
                                 position: "top-left",
