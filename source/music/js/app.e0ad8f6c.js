@@ -4029,16 +4029,13 @@
                             Object(oe["a"])(e.version)
                           );
                         case 5:
-                          return t.stop();
                           (n = t.sent), (t.next = 11);
                           break;
                         case 8:
-                          return t.stop();
                           (t.prev = 8),
                             (t.t0 = t["catch"](2)),
                             console.warn("check version info failed", t.t0);
                         case 11:
-                          return t.stop();
                           n &&
                           (n.HttpsFound ||
                             (n.Found && "https:" !== window.location.protocol))
@@ -4056,7 +4053,7 @@
                                   '<div>\n                        <p>我们使用 PWA 技术，无网络也能使用</p>\n</div>\n</div>\n                        <a target="_blank" href="https://zerospace.dev">Zer0Teams</a></div>',
                                 dangerouslyUseHTMLString: !0,
                                 duration: 1e4,
-                                position: "top-left",
+                                position: "top-center",
                               });
                         case 12:
                         case "end":
