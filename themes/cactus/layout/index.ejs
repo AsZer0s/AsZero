@@ -33,6 +33,10 @@
       <% } %>
     </p>
   <% } %>
+  <div style="position: relative;">
+    <img id="CBH1" src="./images/Created-By-Human-Not-By-AI-Badge-black.svg" alt="Created-By-Human-Not-By-AI" class="hover-image">
+    <img id="CBH2" src="./images/Created-By-Human-Not-By-AI-Badge-white.svg" alt="Created-By-Human-Not-By-AI" class="hover-image">
+  </div>
 </section>
 
 <section id="writing">
@@ -76,6 +80,20 @@
 </section>
 <% } %>
 
+<style>
+  .hover-image {
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #CBH2 {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+
 <script>
   const startDate = new Date('2024-10-20T20:00:00');
   const runtimeElement = document.getElementById('runtime');
@@ -93,27 +111,48 @@
 </script>
 
 <script>
-window.addEventListener('load', function () {
-  var startTime = performance.timing.navigationStart;
-  var endTime = performance.timing.domContentLoadedEventEnd;
-  var loadTime = (endTime - startTime) / 1000;
-  var loadTimeElement = document.createElement('span');
-  loadTimeElement.style.color = 'red';
-  loadTimeElement.textContent = loadTime.toFixed(1);
-  document.getElementById('loadTime').textContent = '本次加载速度：';
-  document.getElementById('loadTime').appendChild(loadTimeElement);
-  document.getElementById('loadTime').textContent += '秒';
-});
+  window.addEventListener('load', function () {
+    var startTime = performance.timing.navigationStart;
+    var endTime = performance.timing.domContentLoadedEventEnd;
+    var loadTime = (endTime - startTime) / 1000;
+    var loadTimeElement = document.createElement('span');
+    loadTimeElement.style.color = 'red';
+    loadTimeElement.textContent = loadTime.toFixed(1);
+    document.getElementById('loadTime').textContent = '本次加载速度：';
+    document.getElementById('loadTime').appendChild(loadTimeElement);
+    document.getElementById('loadTime').textContent += '秒';
+  });
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var pElement = document.getElementById("nodes");
-  var spanElement = document.getElementById("node");
-  setTimeout(function () {
-    if (!/[^\s]/.test(spanElement.textContent)) {
-      pElement.style.display = "none";
-    }
-  }, 1000);
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    var pElement = document.getElementById("nodes");
+    var spanElement = document.getElementById("node");
+    setTimeout(function () {
+      if (!/[^\s]/.test(spanElement.textContent)) {
+        pElement.style.display = "none";
+      }
+    }, 1000);
+  });
+</script>
+
+<script>
+  const CBH1 = document.getElementById('CBH1');
+  const CBH2 = document.getElementById('CBH2');
+
+  CBH1.addEventListener('mouseover', () => {
+    CBH1.style.opacity = 0;
+    CBH2.style.visibility = 'visible';
+    setTimeout(() => {
+      CBH2.style.opacity = 1;
+    }, 10);
+  });
+
+  CBH1.addEventListener('mouseout', () => {
+    CBH1.style.opacity = 1;
+    CBH2.style.opacity = 0;
+    setTimeout(() => {
+      CBH2.style.visibility = 'hidden';
+    }, 500);
+  });
 </script>
