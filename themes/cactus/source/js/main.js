@@ -1,6 +1,8 @@
 /**
  * Sets up Justified Gallery.
  */
+a = 'deerere'
+b = 'unicode'
 if (!!$.prototype.justifiedGallery) {
   var options = {
     rowHeight: 140,
@@ -112,40 +114,44 @@ $(document).ready(function() {
   }
 });
 
-((function() {
-  var callbacks = [],
-      timeLimit = 50,
-      open = false;
-  setInterval(loop, 1);
-  return {
-      addListener: function(fn) {
-          callbacks.push(fn);
-      },
-      cancleListenr: function(fn) {
-          callbacks = callbacks.filter(function(v) {
-              return v !== fn;
-          });
-      }
+
+document.addEventListener('keydown', (e) => {
+  const code = e.code
+  const ctrl = e.ctrlKey
+  const shift = e.shiftKey
+  const isCSI = ctrl && shift && code === 'KeyI'
+  const isF12 = code === 'F12'
+  const isCSC = ctrl && shift && code === 'KeyC'
+  const isSF10 = shift && code === 'F10'
+  if(isF12||isCSI||isCSC||isSF10){e.preventDefault();}});
+
+document.addEventListener('contextmenu', (e) => {e.preventDefault();})
+
+setInterval(() => {
+  let startTime = new Date();
+  console.log('Protect By Zer0Teams');
+  console.log('Protect By Zer0Teams');
+  console.log('Protect By Zer0Teams');
+
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  eval(a[+[]] + 'eb' + b[+[]] + 'gger');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+  console.log('请不要使用开发者工具 以保证我们网站的安全');
+
+  console.log('Protect By Zer0Teams');
+  console.log('Protect By Zer0Teams');
+  console.log('Protect By Zer0Teams');
+  let endTime = new Date();
+  let isDev = endTime - startTime > 100;
+  let stack = [];
+  if (isDev) {
+    while (true) {
+      stack.push(this);
+      console.log(stack.length, this)
+    }
   }
-  function loop() {
-      var startTime = new Date();
-      debugger;
-      if (new Date() - startTime > timeLimit) {
-          if (!open) {
-              callbacks.forEach(function(fn) {
-                  fn.call(null);
-              });
-          }
-          open = true;
-          window.stop();
-          document.write('<div><h1 style=\'text-align:center;\'>请关闭开发者工具 以保证我们的安全</h1></div>')
-          setTimeout(function() {
-              window.location.reload();
-          }, 1000);
-      } else {
-          open = false;
-      }
-  }
-})()).addListener(function() {
-  window.location.reload();
-});
+}, 1000)
