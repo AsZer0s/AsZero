@@ -139,7 +139,9 @@ $(document).ready(function() {
           open = true;
           window.stop();
           document.write('<div><h1 style=\'text-align:center;\'>请关闭开发者工具 以保证我们的安全</h1></div>')
-          window.location.reload();
+          setTimeout(function() {
+              window.location.reload();
+          }, 1000);
       } else {
           open = false;
       }
