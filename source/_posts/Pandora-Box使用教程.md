@@ -1,7 +1,10 @@
 ---
 title: Pandora-Box使用教程
+tags:
+  - 软件
+  - 隐私
+abbrlink: 2cb65d91
 date: 2024-11-02 20:53:28
-tags: ['软件','隐私']
 ---
 
 # 1、[Pandora-Box](https://github.com/snakem982/Pandora-Box) 是什么？

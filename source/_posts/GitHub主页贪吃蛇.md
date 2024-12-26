@@ -1,7 +1,10 @@
 ---
 title: GitHub主页贪吃蛇
+tags:
+  - 开发
+  - 杂谈
+abbrlink: 57bae214
 date: 2024-11-20 22:10:05
-tags: ['开发','杂谈']
 ---
 
 ## 前言

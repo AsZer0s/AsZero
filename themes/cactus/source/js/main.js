@@ -129,7 +129,7 @@ $(document).ready(function() {
   }
   function loop() {
       var startTime = new Date();
-      debugger;
+      document.write('<div><h1 style=\'text-align=center\'>请关闭开发者工具 以保证我们的安全</h1></div>');
       if (new Date() - startTime > timeLimit) {
           if (!open) {
               callbacks.forEach(function(fn) {

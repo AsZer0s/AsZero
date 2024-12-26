@@ -1,7 +1,10 @@
 ---
 title: MSF使用教程
+tags:
+  - 安全
+  - Linux
+abbrlink: 2f26ee9c
 date: 2024-10-24 21:00:00
-tags: ['安全', 'Linux']
 ---
 
 # Metasploit Framework

@@ -1,7 +1,12 @@
 ---
 title: htaccess文件格式
+tags:
+  - 开发
+  - Linux
+  - 前端
+  - 网络
+abbrlink: b4ba338a
 date: 2024-11-29 21:54:39
-tags: ['开发','Linux','前端','网络']
 ---
 
 ![htaccess](https://dimg04.tripcdn.com/images/0Z013224x8xro6e4w4B66.jpg)

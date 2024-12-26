@@ -1,7 +1,11 @@
 ---
 title: JavaScript闭包原理与垃圾回收机制
+tags:
+  - 开发
+  - 前端
+  - JavaScript
+abbrlink: 65ea687a
 date: 2024-11-24 20:04:00
-tags: ['开发','前端','JavaScript']
 ---
 
 JavaScript中的闭包是指能够访问其他函数作用域内变量的函数，即一个函数内部的函数

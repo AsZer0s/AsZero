@@ -1,7 +1,11 @@
 ---
 title: 基于Java和Web协议的微信机器人
+tags:
+  - Java
+  - 开发
+  - 网络
+abbrlink: 1bd49fe9
 date: 2024-12-09 18:57:47
-tags: ['Java','开发','网络']
 ---
 
 # 前言

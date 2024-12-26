@@ -1,7 +1,10 @@
 ---
 title: Byte，bit还傻傻分不清?
+tags:
+  - 杂谈
+  - 网络
+abbrlink: 75a7f6
 date: 2024-11-13 23:37:01
-tags: ['杂谈','网络']
 ---
 
 在数字化时代，我们经常听到关于计算机存储单位的术语，例如 Byte 、bit 、 Mbps 和 MB/s 等

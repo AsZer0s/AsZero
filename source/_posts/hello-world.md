@@ -1,7 +1,9 @@
 ---
 title: Hello World
+tags:
+  - 杂谈
+abbrlink: 4a17b156
 date: 2024-10-22 20:00:00
-tags: ['杂谈']
 ---
 
 ## Welcome To My Site

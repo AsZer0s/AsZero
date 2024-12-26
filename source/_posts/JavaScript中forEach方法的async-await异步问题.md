@@ -1,7 +1,11 @@
 ---
 title: JavaScript中forEach方法的async/await异步问题
+tags:
+  - 开发
+  - 前端
+  - JavaScript
+abbrlink: e6a259a0
 date: 2024-12-19 11:00:35
-tags: ['开发','前端','JavaScript']
 ---
 
 最近在用Node JS写个小项目的时候发现了一个之前没有注意过的问题

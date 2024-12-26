@@ -1,7 +1,12 @@
 ---
 title: Ajax对缓存的处理
+tags:
+  - 开发
+  - 网络
+  - 前端
+  - JavaScript
+abbrlink: 83b5945e
 date: 2024-11-15 16:46:20
-tags: ['开发','网络','前端','JavaScript']
 ---
 
 ## 缓存
