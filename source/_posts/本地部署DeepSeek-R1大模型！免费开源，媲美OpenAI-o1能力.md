@@ -1,9 +1,10 @@
 ---
 title: 本地部署DeepSeek-R1大模型！免费开源，媲美OpenAI-o1能力
+tags:
+  - 大模型
+  - DeepSeek
+abbrlink: 9fe7bc87
 date: 2025-01-26 10:44:20
-tags: 
-   - 大模型
-   - DeepSeek
 ---
 
 最近，一家名叫DeepSeek的初创公司经过技术迭代与升级，发布了全新一代大模型，“DeepSeek-V3”
